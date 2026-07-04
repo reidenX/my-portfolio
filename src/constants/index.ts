@@ -110,43 +110,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    id: 3,
-    title: 'Product manager',
-    description: 'A small project for managing products with CRUD operations',
-    subDescription: [
-      'Built using MERN stack',
-      'The frontend is built with Chakra UI for the components and Next-theme for the light/dark mode',
-    ],
-    href: {
-      site: 'https://product-manager-dkyy.onrender.com',
-      github: 'https://github.com/Ray-Ibno/product-manager',
-    },
-    logo: '',
-    image: '/assets/projects/product-manager.webp',
-    tags: [
-      {
-        id: 1,
-        name: 'React',
-        path: '/assets/logos/React.webp',
-      },
-      {
-        id: 2,
-        name: 'Mongo DB',
-        path: '/assets/logos/MongoDB.webp',
-      },
-      {
-        id: 3,
-        name: 'Node.js',
-        path: '/assets/logos/Node.js.webp',
-      },
-      {
-        id: 4,
-        name: 'Express',
-        path: '/assets/logos/Express.webp',
-      },
-    ],
-  },
 ]
 
 export const EducationList: EducationListProps = [
