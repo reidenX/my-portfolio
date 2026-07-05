@@ -16,6 +16,7 @@ export type ProjectProps = {
     name: string
     path: string
   }[]
+  isOnFreeTier: boolean
 }
 
 export type ProjectDetailsProps = ProjectProps & {

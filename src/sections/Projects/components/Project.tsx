@@ -7,7 +7,12 @@ import { AnimatePresence } from 'motion/react'
 const Project = (props: ProjectProps) => {
   const [isProjectDetailsHidden, setIsProjectDetailsHidden] = useState(true)
   return (
-    <>
+    <div className="relative">
+      <p className="absolute text-sm font-thin text-slate-500 bottom-5 italic">
+        {props.isOnFreeTier
+          ? 'Note: Hosted on a free tier; Please allow 1 minute for the initial spin-up.'
+          : ''}
+      </p>
       <div className="flex-wrap items-center py-10 justify-between space-y-14 sm:flex sm:p-y-0">
         <div>
           <p className="text-2xl">{props.title}</p>
@@ -35,11 +40,12 @@ const Project = (props: ProjectProps) => {
             image={props.image}
             tags={props.tags}
             href={props.href}
+            isOnFreeTier={props.isOnFreeTier}
             closeModal={() => setIsProjectDetailsHidden(true)}
           />
         )}
       </AnimatePresence>
-    </>
+    </div>
   )
 }
 export default Project
