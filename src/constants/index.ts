@@ -56,12 +56,12 @@ export const myProjects = [
       {
         id: 5,
         name: 'Tailwind CSS',
-        path: '/assets/logos/Tailwind CSS.png',
+        path: '/assets/logos/Tailwind CSS.webp',
       },
       {
         id: 6,
         name: 'Redis',
-        path: '/assets/logos/Redis.png',
+        path: '/assets/logos/Redis.webp',
       },
     ],
   },
@@ -106,7 +106,7 @@ export const myProjects = [
       {
         id: 5,
         name: 'Tailwind CSS',
-        path: '/assets/logos/Tailwind CSS.png',
+        path: '/assets/logos/Tailwind CSS.webp',
       },
     ],
   },
