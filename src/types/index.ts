@@ -7,7 +7,7 @@ export type ProjectProps = {
   description: string
   subDescription: string[]
   href: {
-    site: string
+    site: string | undefined
     github: string
   }
   image: string
