@@ -78,7 +78,6 @@ export const myProjects = [
       'Implemented zod validation to ensure data is valid before it reaches the controllers',
     ],
     href: {
-      site: 'https://mern-netflix-clone-gofs.onrender.com',
       github: 'https://github.com/Ray-Ibno/netflix-clone',
     },
     logo: '',
@@ -110,7 +109,7 @@ export const myProjects = [
         path: '/assets/logos/Tailwind CSS.webp',
       },
     ],
-    isOnFreeTier: true,
+    isOnFreeTier: false,
   },
 ]
 

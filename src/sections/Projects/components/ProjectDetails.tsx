@@ -49,14 +49,16 @@ const ProjectDetails = (props: ProjectDetailsProps) => {
                   View Code <BiUpArrow />
                 </a>
 
-                <a
-                  aria-label="View Project"
-                  href={props.href.site}
-                  target="_blank"
-                  className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation"
-                >
-                  View Project <BiUpArrow />
-                </a>
+                {props.href.site && (
+                  <a
+                    aria-label="View Project"
+                    href={props.href.site}
+                    target="_blank"
+                    className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation"
+                  >
+                    View Project <BiUpArrow />
+                  </a>
+                )}
               </div>
             </div>
           </div>
