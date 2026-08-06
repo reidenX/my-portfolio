@@ -105,6 +105,7 @@ export const myProjects = [
         path: '/assets/logos/Redis.webp',
       },
     ],
+    isOnFreeTier: false,
   },
   {
     id: 3,
@@ -150,6 +151,7 @@ export const myProjects = [
         path: '/assets/logos/Tailwind CSS.webp',
       },
     ],
+    isOnFreeTier: false,
   },
 ]
 
