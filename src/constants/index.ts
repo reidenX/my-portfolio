@@ -68,6 +68,46 @@ export const myProjects = [
   },
   {
     id: 2,
+    title: 'E-Commerce Store',
+    description:
+      'An e-commerce store for with customer and admin accounts for viewing, purchasing, and managing products.',
+    subDescription: ['Currently in development'],
+    href: {
+      site: false,
+      github: 'https://github.com/Ray-Ibno/e-commerce-store',
+    },
+    logo: '',
+    image: '',
+    tags: [
+      {
+        id: 1,
+        name: 'React',
+        path: '/assets/logos/React.webp',
+      },
+      {
+        id: 2,
+        name: 'PostgreSQL',
+        path: '/assets/logos/postgreSQL.webp',
+      },
+      {
+        id: 3,
+        name: 'Node.js',
+        path: '/assets/logos/Node.js.webp',
+      },
+      {
+        id: 4,
+        name: 'Express',
+        path: '/assets/logos/Express.webp',
+      },
+      {
+        id: 6,
+        name: 'Redis',
+        path: '/assets/logos/Redis.webp',
+      },
+    ],
+  },
+  {
+    id: 3,
     title: 'Netflix clone',
     description:
       'A clone that utilizes external api for searching actors, shows, movies, and watching trailers.',
@@ -78,7 +118,7 @@ export const myProjects = [
       'Implemented zod validation to ensure data is valid before it reaches the controllers',
     ],
     href: {
-      site: 'https://mern-netflix-clone-gofs.onrender.com',
+      site: false,
       github: 'https://github.com/Ray-Ibno/netflix-clone',
     },
     logo: '',
@@ -110,7 +150,6 @@ export const myProjects = [
         path: '/assets/logos/Tailwind CSS.webp',
       },
     ],
-    isOnFreeTier: true,
   },
 ]
 

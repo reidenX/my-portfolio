@@ -19,7 +19,9 @@ const ProjectDetails = (props: ProjectDetailsProps) => {
           >
             <BiX />
           </button>
-          <img src={props.image} alt={props.title} className="w-full rounded-t-2xl" />
+          {props.image && (
+            <img src={props.image} alt={props.title} className="w-full rounded-t-2xl" />
+          )}
           <div className="p-5">
             <h5 className="mb-2 text-2xl font-bold text-white">{props.title}</h5>
             <p className="mb-3 font-normal text-neutral-400">{props.description}</p>
@@ -49,14 +51,16 @@ const ProjectDetails = (props: ProjectDetailsProps) => {
                   View Code <BiUpArrow />
                 </a>
 
-                <a
-                  aria-label="View Project"
-                  href={props.href.site}
-                  target="_blank"
-                  className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation"
-                >
-                  View Project <BiUpArrow />
-                </a>
+                {props.href.site && (
+                  <a
+                    aria-label="View Project"
+                    href={props.href.site}
+                    target="_blank"
+                    className="inline-flex items-center gap-1 font-medium cursor-pointer hover-animation"
+                  >
+                    View Project <BiUpArrow />
+                  </a>
+                )}
               </div>
             </div>
           </div>
