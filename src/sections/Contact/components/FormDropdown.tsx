@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import {
   Select,
   SelectContent,
@@ -8,21 +7,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../../../components/ui/select'
-import type { Countries, FormDropdownProps } from '../../../types'
+import type { FormDropdownProps } from '../../../types'
 
-const FormDropdown = ({ setValue, value }: FormDropdownProps) => {
-  const [countries, setCountries] = useState<Countries>([])
-
-  useEffect(() => {
-    const getCountries = async () => {
-      const response = await fetch('https://restcountries.com/v3.1/all?fields=name')
-      const fetchedCountries = await response.json()
-      setCountries([...fetchedCountries])
-    }
-
-    getCountries()
-  }, [])
-
+const FormDropdown = ({ countries, setValue, value }: FormDropdownProps) => {
   return (
     <div className="mb-5">
       <label htmlFor="dropdown" className="field-label">
@@ -35,11 +22,13 @@ const FormDropdown = ({ setValue, value }: FormDropdownProps) => {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Country</SelectLabel>
-            {countries.map((country) => (
-              <SelectItem key={country.name.common} value={country.name.common}>
-                {country.name.common}
-              </SelectItem>
-            ))}
+            {countries
+              .filter((country) => country.names.common)
+              .map((country) => (
+                <SelectItem key={country.names.common} value={country.names.common}>
+                  {country.names.common}
+                </SelectItem>
+              ))}
           </SelectGroup>
         </SelectContent>
       </Select>
