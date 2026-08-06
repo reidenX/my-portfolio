@@ -2,8 +2,8 @@ import FormHeader from './components/FormHeader'
 import FormInput from './components/FormInput'
 import emailjs from '@emailjs/browser'
 
-import type { ContactForm } from '../../types'
-import { useState } from 'react'
+import type { ContactForm, Countries } from '../../types'
+import { useEffect, useState } from 'react'
 import FormDropdown from './components/FormDropdown'
 import { toast } from 'sonner'
 import { LightRays } from '../../components/ui/light-rays'
@@ -14,6 +14,7 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false)
+  const [countries, setCountries] = useState<Countries>([])
   const [formData, setFormData] = useState<ContactForm>({
     fullname: '',
     email: '',
@@ -65,6 +66,18 @@ const Contact = () => {
     })
   }
 
+  useEffect(() => {
+    const getCountries = async () => {
+      const response = await fetch('https://api.restcountries.com/countries/v5', {
+        headers: { Authorization: 'Bearer rc_live_3aaa0fccbcfe424fbdb603589ce97823' },
+      })
+      const fetchedCountries = await response.json()
+      setCountries(fetchedCountries.data.objects)
+    }
+
+    getCountries()
+  }, [])
+
   return (
     <section id="contact-section" className="relative flex items-center scroll-mt-20 pt-20">
       <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
@@ -85,10 +98,13 @@ const Contact = () => {
             value={formData.email}
           />
 
-          <FormDropdown
-            setValue={(value: string | null) => setFormData({ ...formData, country: value })}
-            value={formData.country}
-          />
+          {countries.length > 0 && (
+            <FormDropdown
+              countries={countries}
+              setValue={(value: string | null) => setFormData({ ...formData, country: value })}
+              value={formData.country}
+            />
+          )}
 
           <FormInput
             onChange={handleChange}
