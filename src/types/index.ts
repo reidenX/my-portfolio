@@ -39,11 +39,10 @@ export type FormInputProps = {
 }
 
 export type Countries = {
-  names: { common: string; official: string }
+  name: { common: string; official: string }
 }[]
 
 export type FormDropdownProps = {
-  countries: Countries
   setValue: (value: string | null) => void
   value: string | null
 }
